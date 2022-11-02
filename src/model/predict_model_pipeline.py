@@ -50,6 +50,8 @@ def run_predict_pipeline(predict_params: PredictParams):
     logger.info(f"Setting prediction to {predict_params.output_predictions_path}...")
     pd.DataFrame(predictions).to_csv(predict_params.output_predictions_path)
 
+    return predictions
+
 
 @hydra.main(version_base=None, config_path="../../configs/.", config_name="predict_config")
 def predict_pipeline(config_params: PredictParams) -> None:

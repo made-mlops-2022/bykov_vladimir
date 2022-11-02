@@ -1,6 +1,6 @@
-input_data_path: "../../data/raw/heart_cleveland_upload.csv"
-input_model_path: "../../models/model.pkl"
-output_predictions_path: "../../data/predictions/predictions.csv"
+input_data_path: "./tests/test_data/synthetic_data.csv"
+input_model_path: "./models/model.pkl"
+output_predictions_path: "./data/predictions/predictions.csv"
 feature_params:
   categorical_features:
     - 'sex'

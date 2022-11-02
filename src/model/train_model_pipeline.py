@@ -2,7 +2,9 @@
 
 import logging
 import sys
-import hydra
+from typing import Dict
+
+import hydra.core
 from hydra.core.config_store import ConfigStore
 
 
@@ -25,7 +27,7 @@ logger.addHandler(handler)
 logger.propagate = False
 
 
-def run_training_pipeline(training_params: TrainingParams) -> None:
+def run_training_pipeline(training_params: TrainingParams) -> dict[str, float]:
     """Main training pipeline"""
 
     # read data
@@ -67,9 +69,10 @@ def run_training_pipeline(training_params: TrainingParams) -> None:
     # serialize model
     logger.info(f"Serializing model to {training_params.output_model_path} ...")
     serialize_model(model, training_params.output_model_path)
+    return metrics
 
 
-@hydra.main(version_base=None, config_path="../../configs/.", config_name="train_config")
+@hydra.main(version_base=None, config_path="../../configs", config_name="train_config_rf")
 def train_pipeline(config_params: TrainingParams) -> None:
     """Function to read terminal arguments"""
     run_training_pipeline(config_params)

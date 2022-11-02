@@ -1,9 +1,21 @@
 import unittest
 
 
-class MyTestCase(unittest.TestCase):
-    def test_something(self):
-        self.assertEqual(True, False)  # add assertion here
+class PredictModelTests(unittest.TestCase):
+    def test_load_model(self):
+        self.assertEqual(True, False)
+
+    def test_serialize_model(self):
+        pass
+
+    def test_evaluate(self):
+        pass
+
+    def test_predict_model(self):
+        pass
+
+    def test_train_model(self):
+        pass
 
 
 if __name__ == '__main__':
