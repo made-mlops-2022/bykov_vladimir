@@ -33,6 +33,8 @@ jobs:
       run: |
         python tests/test_data/generate_data.py
         
+        export PYTHONPATH=$(pwd)
+
         python tests/model_test/train_model_pipeline_test.py
         python tests/model_test/predict_model_pipeline_test.py
         python tests/features_test/build_features_test.py
