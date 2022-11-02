@@ -1,7 +1,7 @@
-ml_example
+Homework 1
 ==============================
+Heart Disease Cleveland production ready project
 
-Example of ml project
 
 Installation: 
 ~~~
@@ -44,7 +44,7 @@ Project Organization
     │   │
     │   ├── features       <- code to turn raw data into features for modeling
     │   │
-    │   ├── models         <- code to train models and then use trained models to make
+    │   └── models         <- code to train models and then use trained models to make
     │   
     │
     ├── tests                <- Source code for tests.
@@ -56,7 +56,7 @@ Project Organization
     │   │
     │   ├── model_test        <- test training and prediction pipeline
     │   │
-    │   ├── test_data         <- for generating synthetic data   
+    │   └── test_data         <- for generating synthetic data   
     └── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
                               generated with `pip freeze > requirements.txt`
 
