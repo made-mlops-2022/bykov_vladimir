@@ -71,21 +71,6 @@ def load_model() -> None:
         logger.info(f"Model is loaded")
 
 
-def make_predict(model: ClassifierModel, data: HeartDisease) -> List[HeartDiseaseResponse]:
-
-    logger.info(f"Making predict")
-
-    dataset = pd.DataFrame([data.dict()])
-    ids = dataset["id"]
-    dataset = dataset.drop("id", axis=1)
-    logger.info(f"{input_df.columns}")
-    predicts = model.predict(dataset)
-
-    return list(
-        HeartDiseaseResponse(condition=result, id=id_) for result, id_ in zip(predicts, ids)
-    )
-
-
 if __name__ == "__main__":
     logger.info(f"Start app")
     uvicorn.run("server:app", host="0.0.0.0", port=os.getenv("PORT", 8000))
